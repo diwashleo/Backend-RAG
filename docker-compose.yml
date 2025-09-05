@@ -1,0 +1,38 @@
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    restart: always
+    ports:
+      - "8888:6333"  # Access Qdrant via localhost:8888
+      - "6334:6334"  # gRPC port
+    volumes:
+      - qdrant-storage:/qdrant/storage
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"  # Access PostgreSQL via localhost:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  qdrant-storage:
+  postgres-data:
+  redis-data:

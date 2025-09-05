@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+requests
+langchain
+python-dotenv
+pydantic
+python-multipart
+PyPDF2
+langchain_huggingface
+sentence_transformers
+qdrant_client
+sqlalchemy
+psycopg2-binary
+langchain-text-splitters
+groq
+redis
+python-dateutil
