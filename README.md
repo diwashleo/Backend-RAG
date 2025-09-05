@@ -1,0 +1,3 @@
+Backend RAG
+
+Backend RAG is a backend system for Retrieval-Augmented Generation (RAG) built with FastAPI and Python. It allows users to upload .pdf or .txt documents and process them using fixed or recursive chunking strategies. The extracted text is converted into embeddings using sentence-transformers/all-MiniLM-L6-v2 (Hugging Face) and stored in Qdrant for similarity-based retrieval. Users can interact with the system via a conversational RAG API powered by llama-3.1-8b-instant (GROQ), with Redis managing multi-turn chat memory. The backend also supports interview booking, storing metadata in PostgreSQL and sending email notifications via SMTP. The entire system is Dockerized for easy setup and deployment.
